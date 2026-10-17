@@ -1,9 +1,3 @@
-/**
- * @name Apricot Silk
- * @author vos
- * @description Crimson Violet, Clouded Periwinkle y Apricot Silk.
- * @version 1.0.0
- */
 
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@400;500;600&display=swap");
 
@@ -18,13 +12,14 @@
   --as-bg-4: #3c0e22;
   --as-text: #f4ebe6;
   --as-text-muted: #b5bedd;
-  --as-text-faint: #8a86a3;
+  --as-text-faint: #8f97b8;
   --as-apricot-soft: rgba(255, 237, 213, 0.12);
   --as-peri-soft: rgba(181, 190, 221, 0.12);
+  --as-peri-mid: rgba(181, 190, 221, 0.22);
   --as-gradient: linear-gradient(90deg, #470B24 0%, #B5BEDD 55%, #FFEDD5 100%);
   --as-radius: 14px;
   --as-dash: 1.5px dashed rgba(255, 237, 213, 0.45);
-  --as-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cpath d='M30 47C30 47 18 39.5 18 31.5A6 6 0 0 1 30 29.5A6 6 0 0 1 42 31.5C42 39.5 30 47 30 47Z' fill='%23FFEDD5' fill-opacity='0.045'/%3E%3Cpath d='M118 100L120.5 108.5L129 111L120.5 113.5L118 122L115.5 113.5L107 111L115.5 108.5Z' fill='%23B5BEDD' fill-opacity='0.07'/%3E%3Cpath d='M110 22L111.2 26.8L116 28L111.2 29.2L110 34L108.8 29.2L104 28L108.8 26.8Z' fill='%23FFEDD5' fill-opacity='0.06'/%3E%3Ccircle cx='50' cy='130' r='1.6' fill='%23B5BEDD' fill-opacity='0.08'/%3E%3C/svg%3E");
+  --as-dash-peri: 1.5px dashed rgba(181, 190, 221, 0.5);
 }
 
 :root,
@@ -55,21 +50,24 @@
   --channeltextarea-background: var(--as-bg-3) !important;
   --modal-background: var(--as-bg-1) !important;
   --modal-footer-background: var(--as-bg-0) !important;
-  --background-modifier-hover: rgba(181, 190, 221, 0.06) !important;
-  --background-modifier-active: rgba(181, 190, 221, 0.09) !important;
+  --background-modifier-hover: var(--as-peri-soft) !important;
+  --background-modifier-active: var(--as-peri-mid) !important;
   --background-modifier-selected: var(--as-crimson) !important;
-  --background-message-hover: rgba(255, 237, 213, 0.025) !important;
+  --background-message-hover: rgba(181, 190, 221, 0.05) !important;
   --text-normal: var(--as-text) !important;
   --text-default: var(--as-text) !important;
   --header-primary: var(--as-apricot) !important;
-  --header-secondary: var(--as-text-muted) !important;
+  --header-secondary: var(--as-periwinkle) !important;
   --text-muted: var(--as-text-faint) !important;
-  --text-secondary: var(--as-text-muted) !important;
+  --text-secondary: var(--as-periwinkle) !important;
   --channels-default: var(--as-text-faint) !important;
-  --interactive-normal: var(--as-text-muted) !important;
+  --channel-icon: var(--as-periwinkle) !important;
+  --icon-default: var(--as-periwinkle) !important;
+  --icon-secondary: var(--as-periwinkle) !important;
+  --interactive-normal: var(--as-periwinkle) !important;
   --interactive-hover: var(--as-apricot) !important;
   --interactive-active: var(--as-apricot) !important;
-  --interactive-muted: #5e4a5a !important;
+  --interactive-muted: #5e5872 !important;
   --text-link: var(--as-periwinkle) !important;
   --brand-500: var(--as-apricot) !important;
   --brand-560: var(--as-apricot) !important;
@@ -79,18 +77,21 @@
   --button-filled-brand-background-hover: #ffffff !important;
   --button-filled-brand-background-active: var(--as-periwinkle) !important;
   --button-filled-brand-text: var(--as-crimson) !important;
+  --button-secondary-background: var(--as-periwinkle) !important;
+  --button-secondary-background-hover: #c9d0ea !important;
+  --button-secondary-text: var(--as-crimson) !important;
   --control-brand-foreground: var(--as-apricot) !important;
   --control-brand-foreground-new: var(--as-apricot) !important;
   --mention-foreground: var(--as-periwinkle) !important;
-  --mention-background: var(--as-peri-soft) !important;
+  --mention-background: var(--as-peri-mid) !important;
   --background-mentioned: var(--as-peri-soft) !important;
-  --background-mentioned-hover: rgba(181, 190, 221, 0.18) !important;
+  --background-mentioned-hover: var(--as-peri-mid) !important;
   --info-warning-foreground: var(--as-apricot) !important;
-  --border-subtle: rgba(255, 237, 213, 0.07) !important;
-  --border-faint: rgba(255, 237, 213, 0.05) !important;
-  --app-border-frame: rgba(255, 237, 213, 0.07) !important;
-  --scrollbar-thin-thumb: var(--as-bg-4) !important;
-  --scrollbar-auto-thumb: var(--as-bg-4) !important;
+  --border-subtle: rgba(181, 190, 221, 0.1) !important;
+  --border-faint: rgba(181, 190, 221, 0.07) !important;
+  --app-border-frame: rgba(181, 190, 221, 0.1) !important;
+  --scrollbar-thin-thumb: var(--as-periwinkle) !important;
+  --scrollbar-auto-thumb: var(--as-periwinkle) !important;
   --scrollbar-auto-track: transparent !important;
 }
 
@@ -101,6 +102,10 @@
   font-weight: 600 !important;
   font-size: 1.12em !important;
   letter-spacing: 0.01em;
+}
+
+[class*="nameAndDecorators"] [class*="name_"]:not([style*="color"]) {
+  color: var(--as-periwinkle);
 }
 
 h1, h2,
@@ -137,10 +142,14 @@ h1, h2,
 
 [class*="chatContent"] {
   background:
-    radial-gradient(ellipse at 100% 0%, rgba(181, 190, 221, 0.07), transparent 55%),
-    radial-gradient(ellipse at 0% 100%, rgba(255, 237, 213, 0.05), transparent 50%),
-    var(--as-pattern),
+    radial-gradient(ellipse at 100% 0%, rgba(181, 190, 221, 0.13), transparent 55%),
+    radial-gradient(ellipse at 0% 100%, rgba(181, 190, 221, 0.06), transparent 50%),
     var(--as-bg-2) !important;
+}
+
+[class*="membersWrap"],
+[class*="nowPlayingColumn"] {
+  background: linear-gradient(180deg, rgba(181, 190, 221, 0.1) 0%, var(--as-bg-1) 35%) !important;
 }
 
 section[class*="title_"] {
@@ -159,6 +168,17 @@ section[class*="title_"] {
   content: "✦ ";
   color: var(--as-apricot);
   font-style: normal;
+}
+
+[class*="containerDefault"] [class*="link"]:hover,
+[class*="channel_"] [class*="interactive"]:hover {
+  background: var(--as-peri-soft) !important;
+  border-radius: 10px !important;
+}
+
+[class*="containerDefault"] [class*="link"]:hover [class*="name_"],
+[class*="channel_"] [class*="interactive"]:hover [class*="name_"] {
+  color: var(--as-periwinkle) !important;
 }
 
 [class*="containerDefault"][class*="selected"] [class*="link"],
@@ -180,14 +200,18 @@ section[class*="title_"] {
 }
 
 [class*="channelTextArea"] [class*="scrollableContainer"] {
-  border: var(--as-dash);
+  border: var(--as-dash-peri);
   border-radius: var(--as-radius) !important;
   transition: border 0.2s ease, box-shadow 0.2s ease;
 }
 
 [class*="channelTextArea"]:focus-within [class*="scrollableContainer"] {
   border: 1.5px solid var(--as-apricot);
-  box-shadow: 0 0 0 4px var(--as-apricot-soft), 0 0 22px rgba(181, 190, 221, 0.12);
+  box-shadow: 0 0 0 4px var(--as-peri-soft), 0 0 22px rgba(181, 190, 221, 0.2);
+}
+
+[class*="channelTextArea"] [class*="buttons_"] svg {
+  color: var(--as-periwinkle) !important;
 }
 
 [class*="textArea"] {
@@ -196,12 +220,12 @@ section[class*="title_"] {
 
 [class*="searchBar"],
 input[class*="input_"] {
-  border: var(--as-dash) !important;
+  border: var(--as-dash-peri) !important;
   border-radius: 10px !important;
 }
 
 section[class*="panels_"] {
-  background: linear-gradient(135deg, rgba(71, 11, 36, 0.95) 0%, rgba(71, 11, 36, 0.55) 60%, rgba(181, 190, 221, 0.18) 100%) !important;
+  background: linear-gradient(135deg, rgba(71, 11, 36, 0.95) 0%, rgba(71, 11, 36, 0.6) 45%, rgba(181, 190, 221, 0.35) 100%) !important;
   border: var(--as-dash) !important;
   border-radius: var(--as-radius) !important;
 }
@@ -219,7 +243,20 @@ button[class*="colorBrand"],
 button[class*="colorBrand"]:hover,
 [class*="addFriend"]:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(255, 237, 213, 0.25);
+  box-shadow: 0 4px 14px rgba(181, 190, 221, 0.35);
+}
+
+button[class*="colorPrimary"][class*="lookFilled"],
+button[class*="colorSecondary"][class*="lookFilled"] {
+  background: var(--as-periwinkle) !important;
+  color: var(--as-crimson) !important;
+  font-weight: 600 !important;
+  border-radius: 999px !important;
+}
+
+[class*="tabBar"] [class*="item_"]:hover {
+  background: var(--as-peri-soft) !important;
+  color: var(--as-periwinkle) !important;
 }
 
 [class*="tabBar"] [class*="selected"],
@@ -240,13 +277,41 @@ button[class*="colorBrand"]:hover,
   background: var(--as-apricot) !important;
 }
 
+[class*="guildSeparator"] {
+  background: var(--as-periwinkle) !important;
+  opacity: 0.5;
+}
+
 [class*="listItem"] [class*="wrapper_"]:hover,
 [class*="blobContainer"]:hover {
-  filter: drop-shadow(0 0 6px rgba(255, 237, 213, 0.35));
+  filter: drop-shadow(0 0 7px rgba(181, 190, 221, 0.55));
 }
 
 [class*="mentioned"]::before {
-  background: var(--as-apricot) !important;
+  background: var(--as-periwinkle) !important;
+}
+
+[class*="message_"]:hover {
+  box-shadow: inset 2px 0 0 var(--as-periwinkle);
+}
+
+[class*="repliedMessage"]::before {
+  border-color: var(--as-periwinkle) !important;
+}
+
+[class*="reaction_"] {
+  background: var(--as-peri-soft) !important;
+  border: 1px solid transparent !important;
+  border-radius: 999px !important;
+}
+
+[class*="reaction_"][class*="reactionMe"] {
+  background: var(--as-peri-mid) !important;
+  border-color: var(--as-periwinkle) !important;
+}
+
+[class*="reaction_"] [class*="reactionCount"] {
+  color: var(--as-periwinkle) !important;
 }
 
 [class*="menu_"],
@@ -254,13 +319,17 @@ button[class*="colorBrand"]:hover,
 [class*="userProfileOuter"] {
   background: rgba(27, 5, 14, 0.88) !important;
   backdrop-filter: blur(14px);
-  border: var(--as-dash);
+  border: var(--as-dash-peri);
   border-radius: var(--as-radius) !important;
 }
 
 [class*="menu_"] [class*="focused"] {
-  background: var(--as-apricot) !important;
+  background: var(--as-periwinkle) !important;
   color: var(--as-crimson) !important;
+}
+
+[class*="menu_"] [class*="colorDanger"][class*="focused"] {
+  background: var(--as-apricot) !important;
 }
 
 [class*="tooltipPrimary"] {
@@ -275,21 +344,21 @@ button[class*="colorBrand"]:hover,
 
 [class*="nowPlayingColumn"] [class*="itemCard"],
 [class*="activeNowCard"] {
-  border: var(--as-dash) !important;
+  border: var(--as-dash-peri) !important;
   border-radius: var(--as-radius) !important;
-  background: linear-gradient(160deg, var(--as-bg-3), var(--as-bg-1)) !important;
+  background: linear-gradient(160deg, rgba(181, 190, 221, 0.12), var(--as-bg-1) 70%) !important;
 }
 
 code,
 pre code {
   background: var(--as-bg-0) !important;
-  border: 1px solid rgba(181, 190, 221, 0.15) !important;
+  border: 1px solid rgba(181, 190, 221, 0.2) !important;
   border-radius: 8px;
   color: var(--as-periwinkle);
 }
 
 ::selection {
-  background: rgba(181, 190, 221, 0.35);
+  background: rgba(181, 190, 221, 0.4);
   color: #fff;
 }
 
@@ -303,7 +372,7 @@ pre code {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--as-crimson), var(--as-periwinkle));
+  background: linear-gradient(180deg, var(--as-periwinkle), var(--as-crimson));
   border-radius: 8px;
 }
 
@@ -314,5 +383,5 @@ pre code {
 [class*="link"],
 [class*="message_"],
 [class*="listItem"] {
-  transition: background-color 0.15s ease;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease;
 }
