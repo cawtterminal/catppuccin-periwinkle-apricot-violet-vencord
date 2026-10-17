@@ -15,7 +15,12 @@
   --as-peri-soft: rgba(181, 190, 221, 0.12);
   --as-peri-mid: rgba(181, 190, 221, 0.22);
   --as-peri-line: rgba(181, 190, 221, 0.35);
-  --as-side: linear-gradient(180deg, rgba(181, 190, 221, 0.22) 0%, rgba(181, 190, 221, 0.08) 45%, var(--as-bg-1) 100%), var(--as-bg-1);
+  --as-side:
+    radial-gradient(120% 55% at 100% 0%, rgba(71, 11, 36, 0.95) 0%, rgba(71, 11, 36, 0) 70%),
+    radial-gradient(90% 45% at 0% 45%, rgba(181, 190, 221, 0.30) 0%, rgba(181, 190, 221, 0) 75%),
+    radial-gradient(70% 35% at 70% 62%, rgba(181, 190, 221, 0.14) 0%, rgba(181, 190, 221, 0) 80%),
+    radial-gradient(130% 40% at 50% 105%, rgba(255, 237, 213, 0.20) 0%, rgba(255, 237, 213, 0) 75%),
+    linear-gradient(160deg, #2a0816 0%, #1c0711 55%, #1e0d14 100%);
   --as-gradient: linear-gradient(90deg, #470B24 0%, #B5BEDD 55%, #FFEDD5 100%);
   --as-radius: 14px;
   --as-border: 1px solid var(--as-peri-line);
@@ -127,22 +132,21 @@ h1, h2,
   color: var(--as-periwinkle);
 }
 
-[class*="sidebar_"],
-[class*="sidebarList"],
-[class*="privateChannels"],
-[class*="membersWrap"],
-[class*="nowPlayingColumn"] {
+[class*="sidebarList_"],
+[class*="membersWrap_"],
+[class*="nowPlayingColumn_"] {
   background: var(--as-side) !important;
+  background-clip: padding-box !important;
+  overflow: hidden;
 }
 
-[class*="sidebar_"] nav,
-[class*="sidebar_"] [class*="scroller"],
-[class*="sidebar_"] [class*="container_"],
-[class*="privateChannels"] [class*="scroller"],
-[class*="membersWrap"] [class*="members_"],
-[class*="membersWrap"] [class*="scroller"],
-[class*="nowPlayingColumn"] [class*="scroller"],
-[class*="nowPlayingColumn"] aside {
+[class*="sidebarList_"] > nav,
+[class*="sidebarList_"] nav[class*="privateChannels"],
+[class*="sidebarList_"] [class*="scroller_"],
+[class*="membersWrap_"] [class*="members_"],
+[class*="membersWrap_"] [class*="scroller_"],
+[class*="nowPlayingColumn_"] [class*="scroller_"],
+[class*="nowPlayingColumn_"] aside {
   background: transparent !important;
 }
 
