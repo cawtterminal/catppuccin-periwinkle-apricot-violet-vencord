@@ -1,9 +1,11 @@
 /**
- * ONLY for darkest mode on Discord !!!!! sorry :p
- * version 1.5.0
+ * @name Apricot Silk
+ * @author vos
+ * @description Crimson Violet, Clouded Periwinkle y Apricot Silk.
+ * @version 1.3.0
  */
 
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap");
 
 :root {
   --as-crimson: #470B24;
@@ -16,10 +18,11 @@
   --as-bg-4: #3c0e22;
   --as-text: #f4ebe6;
   --as-peri-text: #c3cae6;
-  --as-peri-faint: #8f97b8;
+  --as-peri-faint: #9ea8d6;
   --as-peri-soft: rgba(181, 190, 221, 0.12);
   --as-peri-mid: rgba(181, 190, 221, 0.22);
   --as-peri-line: rgba(181, 190, 221, 0.35);
+  --as-side: linear-gradient(180deg, rgba(181, 190, 221, 0.22) 0%, rgba(181, 190, 221, 0.08) 45%, var(--as-bg-1) 100%), var(--as-bg-1);
   --as-gradient: linear-gradient(90deg, #470B24 0%, #B5BEDD 55%, #FFEDD5 100%);
   --as-radius: 14px;
   --as-border: 1px solid var(--as-peri-line);
@@ -63,14 +66,17 @@
   --header-secondary: var(--as-peri-text) !important;
   --text-muted: var(--as-peri-faint) !important;
   --text-secondary: var(--as-peri-text) !important;
+  --text-tertiary: var(--as-peri-faint) !important;
   --channels-default: var(--as-peri-faint) !important;
   --channel-icon: var(--as-periwinkle) !important;
   --icon-default: var(--as-periwinkle) !important;
   --icon-secondary: var(--as-periwinkle) !important;
+  --icon-tertiary: var(--as-peri-faint) !important;
+  --icon-muted: var(--as-peri-faint) !important;
   --interactive-normal: var(--as-periwinkle) !important;
   --interactive-hover: var(--as-apricot) !important;
   --interactive-active: var(--as-apricot) !important;
-  --interactive-muted: #5e5872 !important;
+  --interactive-muted: var(--as-peri-faint) !important;
   --text-link: var(--as-periwinkle) !important;
   --brand-500: var(--as-apricot) !important;
   --brand-560: var(--as-apricot) !important;
@@ -103,6 +109,10 @@ body {
   font-size-adjust: 0.5;
 }
 
+* {
+  font-style: normal !important;
+}
+
 [class*="username_"],
 [class*="nameAndDecorators"] [class*="name_"],
 [class*="headerText"],
@@ -124,12 +134,43 @@ h1, h2,
   color: var(--as-periwinkle);
 }
 
+[class*="sidebar_"],
+[class*="sidebarList"],
+[class*="privateChannels"],
+[class*="membersWrap"],
+[class*="nowPlayingColumn"] {
+  background: var(--as-side) !important;
+}
+
+[class*="sidebar_"] nav,
+[class*="sidebar_"] [class*="scroller"],
+[class*="sidebar_"] [class*="container_"],
+[class*="privateChannels"] [class*="scroller"],
+[class*="membersWrap"] [class*="members_"],
+[class*="membersWrap"] [class*="scroller"],
+[class*="nowPlayingColumn"] [class*="scroller"],
+[class*="nowPlayingColumn"] aside {
+  background: transparent !important;
+}
+
 [class*="membersGroup"],
 [class*="privateChannelsHeaderContainer"] {
-  font-style: italic;
   text-transform: none !important;
   letter-spacing: 0.02em !important;
   color: var(--as-periwinkle) !important;
+  white-space: nowrap;
+}
+
+[class*="membersGroup"]:not(:has([class*="membersGroup"]))::before {
+  content: "✦";
+  color: var(--as-apricot);
+  margin-right: 6px;
+}
+
+[class*="privateChannelsHeaderContainer"] > [class*="headerText"]::before {
+  content: "♡";
+  color: var(--as-apricot);
+  margin-right: 6px;
 }
 
 [class*="timestamp_"] {
@@ -141,7 +182,6 @@ h1, h2,
 }
 
 [class*="divider_"] [class*="content_"] {
-  font-style: italic;
   color: var(--as-periwinkle) !important;
 }
 
@@ -150,17 +190,16 @@ section[class*="title_"] {
   border-image: var(--as-gradient) 1 !important;
 }
 
-[class*="privateChannelsHeaderContainer"] [class*="headerText"]::before,
-[class*="privateChannelsHeaderContainer"] > span::before {
-  content: "♡ ";
-  color: var(--as-apricot);
-  font-style: normal;
+svg:not([class*="status"]):not([class*="avatar"]):not([class*="mask"]),
+[class*="icon_"]:not([class*="status"]):not([class*="avatar"]) {
+  color: var(--as-periwinkle);
 }
 
-[class*="membersGroup"]::before {
-  content: "✦ ";
-  color: var(--as-apricot);
-  font-style: normal;
+button:hover svg,
+[role="button"]:hover svg,
+[class*="link"]:hover svg,
+[class*="selected"] svg {
+  color: var(--as-apricot) !important;
 }
 
 [class*="containerDefault"] [class*="link"]:hover,
@@ -187,11 +226,6 @@ section[class*="title_"] {
   color: var(--as-apricot) !important;
 }
 
-[class*="modeSelected"] [class*="name_"]::after {
-  content: " ✧";
-  color: var(--as-apricot);
-}
-
 [class*="channelTextArea"] [class*="scrollableContainer"] {
   border: var(--as-border);
   border-radius: var(--as-radius) !important;
@@ -201,10 +235,6 @@ section[class*="title_"] {
 [class*="channelTextArea"]:focus-within [class*="scrollableContainer"] {
   border-color: var(--as-periwinkle);
   box-shadow: 0 0 0 3px var(--as-peri-soft);
-}
-
-[class*="channelTextArea"] [class*="buttons_"] svg {
-  color: var(--as-periwinkle) !important;
 }
 
 [class*="textArea"] {
@@ -245,6 +275,13 @@ button[class*="colorSecondary"][class*="lookFilled"] {
   color: var(--as-crimson) !important;
   font-weight: 600 !important;
   border-radius: 999px !important;
+}
+
+button[class*="colorBrand"] svg,
+button[class*="lookFilled"] svg,
+[class*="addFriend"] svg,
+[class*="tabBar"] [class*="selected"] svg {
+  color: var(--as-crimson) !important;
 }
 
 [class*="tabBar"] [class*="item_"]:hover {
@@ -321,6 +358,10 @@ button[class*="colorSecondary"][class*="lookFilled"] {
   color: var(--as-crimson) !important;
 }
 
+[class*="menu_"] [class*="focused"] svg {
+  color: var(--as-crimson) !important;
+}
+
 [class*="menu_"] [class*="colorDanger"][class*="focused"] {
   background: var(--as-apricot) !important;
 }
@@ -339,7 +380,7 @@ button[class*="colorSecondary"][class*="lookFilled"] {
 [class*="activeNowCard"] {
   border: var(--as-border) !important;
   border-radius: var(--as-radius) !important;
-  background: var(--as-bg-3) !important;
+  background: rgba(46, 10, 26, 0.75) !important;
 }
 
 code,
