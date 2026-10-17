@@ -1,20 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap");
 
 :root {
-  --as-crimson: #470B24;
+  --as-crimson: #ab1654a1;
   --as-periwinkle: #B5BEDD;
   --as-apricot: #FFEDD5;
-  --as-bg-0: #140309;
-  --as-bg-1: #1b050e;
+  --as-bg-0: #31141e;
+  --as-bg-1: #320b1b;
   --as-bg-2: #220713;
   --as-bg-3: #2e0a1a;
   --as-bg-4: #3c0e22;
   --as-text: #f4ebe6;
   --as-peri-text: #c3cae6;
   --as-peri-faint: #9ea8d6;
-  --as-peri-soft: rgba(181, 190, 221, 0.12);
-  --as-peri-mid: rgba(181, 190, 221, 0.22);
-  --as-peri-line: rgba(181, 190, 221, 0.35);
+  --as-peri-soft: rgba(169, 188, 255, 0.511);
+  --as-peri-mid: rgba(181, 190, 221, 0.8);
+  --as-peri-line: rgb(181, 190, 221);
   --as-side:
     radial-gradient(120% 55% at 100% 0%, rgba(71, 11, 36, 0.95) 0%, rgba(71, 11, 36, 0) 70%),
     radial-gradient(90% 45% at 0% 45%, rgba(181, 190, 221, 0.30) 0%, rgba(181, 190, 221, 0) 75%),
