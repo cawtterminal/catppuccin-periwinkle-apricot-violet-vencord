@@ -1,3 +1,7 @@
+/**
+ * ONLY for darkest mode on Discord !!!!! sorry :p
+ * version 1.5.0
+ */
 
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@400;500;600&display=swap");
 
@@ -11,15 +15,14 @@
   --as-bg-3: #2e0a1a;
   --as-bg-4: #3c0e22;
   --as-text: #f4ebe6;
-  --as-text-muted: #b5bedd;
-  --as-text-faint: #8f97b8;
-  --as-apricot-soft: rgba(255, 237, 213, 0.12);
+  --as-peri-text: #c3cae6;
+  --as-peri-faint: #8f97b8;
   --as-peri-soft: rgba(181, 190, 221, 0.12);
   --as-peri-mid: rgba(181, 190, 221, 0.22);
+  --as-peri-line: rgba(181, 190, 221, 0.35);
   --as-gradient: linear-gradient(90deg, #470B24 0%, #B5BEDD 55%, #FFEDD5 100%);
   --as-radius: 14px;
-  --as-dash: 1.5px dashed rgba(255, 237, 213, 0.45);
-  --as-dash-peri: 1.5px dashed rgba(181, 190, 221, 0.5);
+  --as-border: 1px solid var(--as-peri-line);
 }
 
 :root,
@@ -52,15 +55,15 @@
   --modal-footer-background: var(--as-bg-0) !important;
   --background-modifier-hover: var(--as-peri-soft) !important;
   --background-modifier-active: var(--as-peri-mid) !important;
-  --background-modifier-selected: var(--as-crimson) !important;
-  --background-message-hover: rgba(181, 190, 221, 0.05) !important;
+  --background-modifier-selected: var(--as-peri-mid) !important;
+  --background-message-hover: rgba(181, 190, 221, 0.06) !important;
   --text-normal: var(--as-text) !important;
   --text-default: var(--as-text) !important;
-  --header-primary: var(--as-apricot) !important;
-  --header-secondary: var(--as-periwinkle) !important;
-  --text-muted: var(--as-text-faint) !important;
-  --text-secondary: var(--as-periwinkle) !important;
-  --channels-default: var(--as-text-faint) !important;
+  --header-primary: var(--as-periwinkle) !important;
+  --header-secondary: var(--as-peri-text) !important;
+  --text-muted: var(--as-peri-faint) !important;
+  --text-secondary: var(--as-peri-text) !important;
+  --channels-default: var(--as-peri-faint) !important;
   --channel-icon: var(--as-periwinkle) !important;
   --icon-default: var(--as-periwinkle) !important;
   --icon-secondary: var(--as-periwinkle) !important;
@@ -87,20 +90,33 @@
   --background-mentioned: var(--as-peri-soft) !important;
   --background-mentioned-hover: var(--as-peri-mid) !important;
   --info-warning-foreground: var(--as-apricot) !important;
-  --border-subtle: rgba(181, 190, 221, 0.1) !important;
-  --border-faint: rgba(181, 190, 221, 0.07) !important;
-  --app-border-frame: rgba(181, 190, 221, 0.1) !important;
+  --border-subtle: rgba(181, 190, 221, 0.12) !important;
+  --border-faint: rgba(181, 190, 221, 0.08) !important;
+  --app-border-frame: rgba(181, 190, 221, 0.12) !important;
   --scrollbar-thin-thumb: var(--as-periwinkle) !important;
   --scrollbar-auto-thumb: var(--as-periwinkle) !important;
   --scrollbar-auto-track: transparent !important;
 }
 
+html,
+body {
+  font-size-adjust: 0.5;
+}
+
 [class*="username_"],
 [class*="nameAndDecorators"] [class*="name_"],
-[class*="headerText"] {
+[class*="headerText"],
+h1, h2,
+[class*="title_"] [class*="titleWrapper"],
+[class*="privateChannelsHeaderContainer"],
+[class*="membersGroup"],
+[class*="divider_"] [class*="content_"] {
   font-family: var(--font-display) !important;
+}
+
+[class*="username_"],
+[class*="nameAndDecorators"] [class*="name_"] {
   font-weight: 600 !important;
-  font-size: 1.12em !important;
   letter-spacing: 0.01em;
 }
 
@@ -108,16 +124,8 @@
   color: var(--as-periwinkle);
 }
 
-h1, h2,
-[class*="title_"] [class*="titleWrapper"],
-[class*="privateChannelsHeaderContainer"],
-[class*="membersGroup"] {
-  font-family: var(--font-display) !important;
-}
-
 [class*="membersGroup"],
 [class*="privateChannelsHeaderContainer"] {
-  font-size: 15px !important;
   font-style: italic;
   text-transform: none !important;
   letter-spacing: 0.02em !important;
@@ -125,8 +133,7 @@ h1, h2,
 }
 
 [class*="timestamp_"] {
-  color: var(--as-text-faint) !important;
-  font-size: 0.72rem !important;
+  color: var(--as-peri-faint) !important;
 }
 
 [class*="divider_"][class*="hasContent"] {
@@ -134,26 +141,12 @@ h1, h2,
 }
 
 [class*="divider_"] [class*="content_"] {
-  font-family: var(--font-display) !important;
   font-style: italic;
-  font-size: 14px !important;
   color: var(--as-periwinkle) !important;
 }
 
-[class*="chatContent"] {
-  background:
-    radial-gradient(ellipse at 100% 0%, rgba(181, 190, 221, 0.13), transparent 55%),
-    radial-gradient(ellipse at 0% 100%, rgba(181, 190, 221, 0.06), transparent 50%),
-    var(--as-bg-2) !important;
-}
-
-[class*="membersWrap"],
-[class*="nowPlayingColumn"] {
-  background: linear-gradient(180deg, rgba(181, 190, 221, 0.1) 0%, var(--as-bg-1) 35%) !important;
-}
-
 section[class*="title_"] {
-  border-bottom: 2px solid transparent !important;
+  border-bottom: 1px solid transparent !important;
   border-image: var(--as-gradient) 1 !important;
 }
 
@@ -184,8 +177,8 @@ section[class*="title_"] {
 [class*="containerDefault"][class*="selected"] [class*="link"],
 [class*="modeSelected"] [class*="link"],
 [class*="channel_"][class*="selected"] [class*="interactive"] {
-  background: var(--as-crimson) !important;
-  border: var(--as-dash);
+  background: var(--as-peri-mid) !important;
+  border: 1px solid var(--as-periwinkle);
   border-radius: 10px !important;
 }
 
@@ -196,18 +189,18 @@ section[class*="title_"] {
 
 [class*="modeSelected"] [class*="name_"]::after {
   content: " ✧";
-  color: var(--as-periwinkle);
+  color: var(--as-apricot);
 }
 
 [class*="channelTextArea"] [class*="scrollableContainer"] {
-  border: var(--as-dash-peri);
+  border: var(--as-border);
   border-radius: var(--as-radius) !important;
-  transition: border 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 [class*="channelTextArea"]:focus-within [class*="scrollableContainer"] {
-  border: 1.5px solid var(--as-apricot);
-  box-shadow: 0 0 0 4px var(--as-peri-soft), 0 0 22px rgba(181, 190, 221, 0.2);
+  border-color: var(--as-periwinkle);
+  box-shadow: 0 0 0 3px var(--as-peri-soft);
 }
 
 [class*="channelTextArea"] [class*="buttons_"] svg {
@@ -220,13 +213,13 @@ section[class*="title_"] {
 
 [class*="searchBar"],
 input[class*="input_"] {
-  border: var(--as-dash-peri) !important;
+  border: var(--as-border) !important;
   border-radius: 10px !important;
 }
 
 section[class*="panels_"] {
-  background: linear-gradient(135deg, rgba(71, 11, 36, 0.95) 0%, rgba(71, 11, 36, 0.6) 45%, rgba(181, 190, 221, 0.35) 100%) !important;
-  border: var(--as-dash) !important;
+  background: linear-gradient(135deg, var(--as-bg-3) 0%, rgba(181, 190, 221, 0.28) 100%) !important;
+  border: var(--as-border) !important;
   border-radius: var(--as-radius) !important;
 }
 
@@ -261,9 +254,9 @@ button[class*="colorSecondary"][class*="lookFilled"] {
 
 [class*="tabBar"] [class*="selected"],
 [class*="item_"][class*="selected"][class*="themed"] {
-  background: var(--as-crimson) !important;
-  color: var(--as-apricot) !important;
-  border: var(--as-dash);
+  background: var(--as-periwinkle) !important;
+  color: var(--as-crimson) !important;
+  border: none !important;
 }
 
 [class*="numberBadge"],
@@ -317,9 +310,9 @@ button[class*="colorSecondary"][class*="lookFilled"] {
 [class*="menu_"],
 [class*="userPopout"],
 [class*="userProfileOuter"] {
-  background: rgba(27, 5, 14, 0.88) !important;
+  background: rgba(27, 5, 14, 0.92) !important;
   backdrop-filter: blur(14px);
-  border: var(--as-dash-peri);
+  border: var(--as-border);
   border-radius: var(--as-radius) !important;
 }
 
@@ -333,20 +326,20 @@ button[class*="colorSecondary"][class*="lookFilled"] {
 }
 
 [class*="tooltipPrimary"] {
-  background: var(--as-apricot) !important;
+  background: var(--as-periwinkle) !important;
   color: var(--as-crimson) !important;
   font-weight: 600;
 }
 
 [class*="tooltipPrimary"] [class*="tooltipPointer"] {
-  border-top-color: var(--as-apricot) !important;
+  border-top-color: var(--as-periwinkle) !important;
 }
 
 [class*="nowPlayingColumn"] [class*="itemCard"],
 [class*="activeNowCard"] {
-  border: var(--as-dash-peri) !important;
+  border: var(--as-border) !important;
   border-radius: var(--as-radius) !important;
-  background: linear-gradient(160deg, rgba(181, 190, 221, 0.12), var(--as-bg-1) 70%) !important;
+  background: var(--as-bg-3) !important;
 }
 
 code,
@@ -372,7 +365,7 @@ pre code {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--as-periwinkle), var(--as-crimson));
+  background: var(--as-periwinkle);
   border-radius: 8px;
 }
 
