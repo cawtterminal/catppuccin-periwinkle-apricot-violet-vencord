@@ -1,0 +1,318 @@
+/**
+ * @name Apricot Silk
+ * @author vos
+ * @description Crimson Violet, Clouded Periwinkle y Apricot Silk.
+ * @version 1.0.0
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@400;500;600&display=swap");
+
+:root {
+  --as-crimson: #470B24;
+  --as-periwinkle: #B5BEDD;
+  --as-apricot: #FFEDD5;
+  --as-bg-0: #140309;
+  --as-bg-1: #1b050e;
+  --as-bg-2: #220713;
+  --as-bg-3: #2e0a1a;
+  --as-bg-4: #3c0e22;
+  --as-text: #f4ebe6;
+  --as-text-muted: #b5bedd;
+  --as-text-faint: #8a86a3;
+  --as-apricot-soft: rgba(255, 237, 213, 0.12);
+  --as-peri-soft: rgba(181, 190, 221, 0.12);
+  --as-gradient: linear-gradient(90deg, #470B24 0%, #B5BEDD 55%, #FFEDD5 100%);
+  --as-radius: 14px;
+  --as-dash: 1.5px dashed rgba(255, 237, 213, 0.45);
+  --as-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cpath d='M30 47C30 47 18 39.5 18 31.5A6 6 0 0 1 30 29.5A6 6 0 0 1 42 31.5C42 39.5 30 47 30 47Z' fill='%23FFEDD5' fill-opacity='0.045'/%3E%3Cpath d='M118 100L120.5 108.5L129 111L120.5 113.5L118 122L115.5 113.5L107 111L115.5 108.5Z' fill='%23B5BEDD' fill-opacity='0.07'/%3E%3Cpath d='M110 22L111.2 26.8L116 28L111.2 29.2L110 34L108.8 29.2L104 28L108.8 26.8Z' fill='%23FFEDD5' fill-opacity='0.06'/%3E%3Ccircle cx='50' cy='130' r='1.6' fill='%23B5BEDD' fill-opacity='0.08'/%3E%3C/svg%3E");
+}
+
+:root,
+.theme-dark,
+.theme-darker,
+.theme-midnight,
+.visual-refresh.theme-dark {
+  --font-primary: "Poppins", "gg sans", sans-serif !important;
+  --font-display: "EB Garamond", Georgia, serif !important;
+  --font-headline: "EB Garamond", Georgia, serif !important;
+  --background-primary: var(--as-bg-2) !important;
+  --background-secondary: var(--as-bg-1) !important;
+  --background-secondary-alt: var(--as-bg-0) !important;
+  --background-tertiary: var(--as-bg-0) !important;
+  --background-floating: var(--as-bg-1) !important;
+  --background-accent: var(--as-bg-4) !important;
+  --background-base-lowest: var(--as-bg-0) !important;
+  --background-base-lower: var(--as-bg-1) !important;
+  --background-base-low: var(--as-bg-1) !important;
+  --background-surface-high: var(--as-bg-3) !important;
+  --background-surface-higher: var(--as-bg-3) !important;
+  --background-surface-highest: var(--as-bg-4) !important;
+  --chat-background-default: var(--as-bg-2) !important;
+  --bg-overlay-chat: var(--as-bg-2) !important;
+  --bg-base-primary: var(--as-bg-2) !important;
+  --bg-base-secondary: var(--as-bg-1) !important;
+  --bg-base-tertiary: var(--as-bg-0) !important;
+  --channeltextarea-background: var(--as-bg-3) !important;
+  --modal-background: var(--as-bg-1) !important;
+  --modal-footer-background: var(--as-bg-0) !important;
+  --background-modifier-hover: rgba(181, 190, 221, 0.06) !important;
+  --background-modifier-active: rgba(181, 190, 221, 0.09) !important;
+  --background-modifier-selected: var(--as-crimson) !important;
+  --background-message-hover: rgba(255, 237, 213, 0.025) !important;
+  --text-normal: var(--as-text) !important;
+  --text-default: var(--as-text) !important;
+  --header-primary: var(--as-apricot) !important;
+  --header-secondary: var(--as-text-muted) !important;
+  --text-muted: var(--as-text-faint) !important;
+  --text-secondary: var(--as-text-muted) !important;
+  --channels-default: var(--as-text-faint) !important;
+  --interactive-normal: var(--as-text-muted) !important;
+  --interactive-hover: var(--as-apricot) !important;
+  --interactive-active: var(--as-apricot) !important;
+  --interactive-muted: #5e4a5a !important;
+  --text-link: var(--as-periwinkle) !important;
+  --brand-500: var(--as-apricot) !important;
+  --brand-560: var(--as-apricot) !important;
+  --brand-600: var(--as-apricot) !important;
+  --brand-experiment: var(--as-apricot) !important;
+  --button-filled-brand-background: var(--as-apricot) !important;
+  --button-filled-brand-background-hover: #ffffff !important;
+  --button-filled-brand-background-active: var(--as-periwinkle) !important;
+  --button-filled-brand-text: var(--as-crimson) !important;
+  --control-brand-foreground: var(--as-apricot) !important;
+  --control-brand-foreground-new: var(--as-apricot) !important;
+  --mention-foreground: var(--as-periwinkle) !important;
+  --mention-background: var(--as-peri-soft) !important;
+  --background-mentioned: var(--as-peri-soft) !important;
+  --background-mentioned-hover: rgba(181, 190, 221, 0.18) !important;
+  --info-warning-foreground: var(--as-apricot) !important;
+  --border-subtle: rgba(255, 237, 213, 0.07) !important;
+  --border-faint: rgba(255, 237, 213, 0.05) !important;
+  --app-border-frame: rgba(255, 237, 213, 0.07) !important;
+  --scrollbar-thin-thumb: var(--as-bg-4) !important;
+  --scrollbar-auto-thumb: var(--as-bg-4) !important;
+  --scrollbar-auto-track: transparent !important;
+}
+
+[class*="username_"],
+[class*="nameAndDecorators"] [class*="name_"],
+[class*="headerText"] {
+  font-family: var(--font-display) !important;
+  font-weight: 600 !important;
+  font-size: 1.12em !important;
+  letter-spacing: 0.01em;
+}
+
+h1, h2,
+[class*="title_"] [class*="titleWrapper"],
+[class*="privateChannelsHeaderContainer"],
+[class*="membersGroup"] {
+  font-family: var(--font-display) !important;
+}
+
+[class*="membersGroup"],
+[class*="privateChannelsHeaderContainer"] {
+  font-size: 15px !important;
+  font-style: italic;
+  text-transform: none !important;
+  letter-spacing: 0.02em !important;
+  color: var(--as-periwinkle) !important;
+}
+
+[class*="timestamp_"] {
+  color: var(--as-text-faint) !important;
+  font-size: 0.72rem !important;
+}
+
+[class*="divider_"][class*="hasContent"] {
+  border-image: var(--as-gradient) 1 !important;
+}
+
+[class*="divider_"] [class*="content_"] {
+  font-family: var(--font-display) !important;
+  font-style: italic;
+  font-size: 14px !important;
+  color: var(--as-periwinkle) !important;
+}
+
+[class*="chatContent"] {
+  background:
+    radial-gradient(ellipse at 100% 0%, rgba(181, 190, 221, 0.07), transparent 55%),
+    radial-gradient(ellipse at 0% 100%, rgba(255, 237, 213, 0.05), transparent 50%),
+    var(--as-pattern),
+    var(--as-bg-2) !important;
+}
+
+section[class*="title_"] {
+  border-bottom: 2px solid transparent !important;
+  border-image: var(--as-gradient) 1 !important;
+}
+
+[class*="privateChannelsHeaderContainer"] [class*="headerText"]::before,
+[class*="privateChannelsHeaderContainer"] > span::before {
+  content: "♡ ";
+  color: var(--as-apricot);
+  font-style: normal;
+}
+
+[class*="membersGroup"]::before {
+  content: "✦ ";
+  color: var(--as-apricot);
+  font-style: normal;
+}
+
+[class*="containerDefault"][class*="selected"] [class*="link"],
+[class*="modeSelected"] [class*="link"],
+[class*="channel_"][class*="selected"] [class*="interactive"] {
+  background: var(--as-crimson) !important;
+  border: var(--as-dash);
+  border-radius: 10px !important;
+}
+
+[class*="modeSelected"] [class*="name_"],
+[class*="channel_"][class*="selected"] [class*="name_"] {
+  color: var(--as-apricot) !important;
+}
+
+[class*="modeSelected"] [class*="name_"]::after {
+  content: " ✧";
+  color: var(--as-periwinkle);
+}
+
+[class*="channelTextArea"] [class*="scrollableContainer"] {
+  border: var(--as-dash);
+  border-radius: var(--as-radius) !important;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+[class*="channelTextArea"]:focus-within [class*="scrollableContainer"] {
+  border: 1.5px solid var(--as-apricot);
+  box-shadow: 0 0 0 4px var(--as-apricot-soft), 0 0 22px rgba(181, 190, 221, 0.12);
+}
+
+[class*="textArea"] {
+  caret-color: var(--as-apricot);
+}
+
+[class*="searchBar"],
+input[class*="input_"] {
+  border: var(--as-dash) !important;
+  border-radius: 10px !important;
+}
+
+section[class*="panels_"] {
+  background: linear-gradient(135deg, rgba(71, 11, 36, 0.95) 0%, rgba(71, 11, 36, 0.55) 60%, rgba(181, 190, 221, 0.18) 100%) !important;
+  border: var(--as-dash) !important;
+  border-radius: var(--as-radius) !important;
+}
+
+button[class*="colorBrand"],
+[class*="lookFilled"][class*="colorBrand"],
+[class*="addFriend"] {
+  background: var(--as-apricot) !important;
+  color: var(--as-crimson) !important;
+  font-weight: 600 !important;
+  border-radius: 999px !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button[class*="colorBrand"]:hover,
+[class*="addFriend"]:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(255, 237, 213, 0.25);
+}
+
+[class*="tabBar"] [class*="selected"],
+[class*="item_"][class*="selected"][class*="themed"] {
+  background: var(--as-crimson) !important;
+  color: var(--as-apricot) !important;
+  border: var(--as-dash);
+}
+
+[class*="numberBadge"],
+[class*="lowerBadge"] [class*="badge"] {
+  background-color: var(--as-apricot) !important;
+  color: var(--as-crimson) !important;
+  font-weight: 700 !important;
+}
+
+[class*="pill"] [class*="item_"] {
+  background: var(--as-apricot) !important;
+}
+
+[class*="listItem"] [class*="wrapper_"]:hover,
+[class*="blobContainer"]:hover {
+  filter: drop-shadow(0 0 6px rgba(255, 237, 213, 0.35));
+}
+
+[class*="mentioned"]::before {
+  background: var(--as-apricot) !important;
+}
+
+[class*="menu_"],
+[class*="userPopout"],
+[class*="userProfileOuter"] {
+  background: rgba(27, 5, 14, 0.88) !important;
+  backdrop-filter: blur(14px);
+  border: var(--as-dash);
+  border-radius: var(--as-radius) !important;
+}
+
+[class*="menu_"] [class*="focused"] {
+  background: var(--as-apricot) !important;
+  color: var(--as-crimson) !important;
+}
+
+[class*="tooltipPrimary"] {
+  background: var(--as-apricot) !important;
+  color: var(--as-crimson) !important;
+  font-weight: 600;
+}
+
+[class*="tooltipPrimary"] [class*="tooltipPointer"] {
+  border-top-color: var(--as-apricot) !important;
+}
+
+[class*="nowPlayingColumn"] [class*="itemCard"],
+[class*="activeNowCard"] {
+  border: var(--as-dash) !important;
+  border-radius: var(--as-radius) !important;
+  background: linear-gradient(160deg, var(--as-bg-3), var(--as-bg-1)) !important;
+}
+
+code,
+pre code {
+  background: var(--as-bg-0) !important;
+  border: 1px solid rgba(181, 190, 221, 0.15) !important;
+  border-radius: 8px;
+  color: var(--as-periwinkle);
+}
+
+::selection {
+  background: rgba(181, 190, 221, 0.35);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--as-crimson), var(--as-periwinkle));
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--as-apricot);
+}
+
+[class*="link"],
+[class*="message_"],
+[class*="listItem"] {
+  transition: background-color 0.15s ease;
+}
